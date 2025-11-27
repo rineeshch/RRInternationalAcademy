@@ -1,8 +1,15 @@
 /********** Template CSS **********/
 :root {
-    --primary: #06BBCC;
+    --primary: #1D4ED8;
     --light: #F0FBFC;
     --dark: #181d38;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    line-height: 1.7;
+    background: #f3f4f6;
+    color: #111827;
 }
 
 .fw-medium {
@@ -41,7 +48,8 @@
 .btn {
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
-    transition: .5s;
+    border-radius: 999px;
+    transition: background-color .25s ease, color .25s ease, box-shadow .25s ease, transform .15s ease;
 }
 
 .btn.btn-primary,
@@ -72,7 +80,18 @@
     align-items: center;
     justify-content: center;
     font-weight: normal;
-    border-radius: 0px;
+    border-radius: 14px;
+}
+
+.btn-primary,
+.btn-secondary {
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.45);
 }
 
 
@@ -187,17 +206,21 @@
     background: transparent;
     border: 1px solid #FFFFFF;
     font-size: 22px;
-    transition: .5s;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    background: rgba(15, 23, 42, 0.35);
+    transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .15s ease;
 }
 
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover {
     background: var(--primary);
     border-color: var(--primary);
+    transform: translateY(-1px);
 }
 
 .page-header {
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/carousel-1.jpg);
+    background: linear-gradient(rgba(15, 23, 42, .55), rgba(15, 23, 42, .85)), url(../img/carousel-1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -230,6 +253,13 @@
     z-index: -1;
 }
 
+.section-title,
+.section-title + h1,
+.section-title + h2,
+.section-title + h3 {
+    letter-spacing: 0.04em;
+}
+
 .section-title::after {
     position: absolute;
     content: "";
@@ -254,17 +284,21 @@
 
 /*** Service ***/
 .service-item {
-    background: var(--light);
-    transition: .5s;
+    background: #ffffff;
+    transition: .4s ease;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
 }
 
 .service-item:hover {
-    margin-top: -10px;
+    margin-top: -8px;
     background: var(--primary);
+    box-shadow: 0 24px 60px rgba(37, 99, 235, 0.35);
 }
 
 .service-item * {
-    transition: .5s;
+    transition: .3s ease;
 }
 
 .service-item:hover * {
@@ -283,6 +317,19 @@
     transform: scale(1.1);
 }
 
+.course-item {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 55px rgba(37, 99, 235, 0.25);
+}
+
 
 /*** Team ***/
 .team-item img {
@@ -291,6 +338,19 @@
 
 .team-item:hover img {
     transform: scale(1.1);
+}
+
+.team-item {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.team-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 55px rgba(37, 99, 235, 0.22);
 }
 
 
@@ -384,6 +444,7 @@
 
 .footer .btn.btn-social:hover {
     color: var(--primary);
+    background: #f9fafb;
 }
 
 .footer .btn.btn-link {
@@ -431,4 +492,59 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+.footer {
+    background: radial-gradient(circle at top, #111827 0, #020617 55%, #000000 100%);
+}
+
+.footer h4 {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.footer .copyright {
+    border-top-color: rgba(148, 163, 184, .35);
+}
+
+/********** Primary Color Overrides (Force Dark Blue) **********/
+.btn-primary,
+.btn.btn-primary {
+    background-color: #1D4ED8 !important;
+    border-color: #1D4ED8 !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+    background-color: #1e40af !important;
+    border-color: #1e40af !important;
+}
+
+.text-primary {
+    color: #1D4ED8 !important;
+}
+
+.bg-primary {
+    background-color: #1D4ED8 !important;
+}
+
+a,
+a.text-primary {
+    color: #1D4ED8 !important;
+}
+
+a:hover,
+a:focus {
+    color: #1e40af !important;
+}
+
+/* Ensure navbar links are readable on dark header */
+.navbar-dark .navbar-nav .nav-link {
+    color: #f9fafb !important;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1D4ED8 !important;
 }

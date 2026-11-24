@@ -31,10 +31,15 @@ html {
     letter-spacing: 0;
 }
 
-.brochure-header {
+.brochure-sticky-shell {
     position: sticky;
     top: 0;
     z-index: 20;
+}
+
+.brochure-header {
+    position: relative;
+    z-index: 1;
     display: flex;
     min-height: 76px;
     align-items: center;
@@ -80,7 +85,7 @@ html {
 
 .announcement-strip {
     position: relative;
-    z-index: 19;
+    z-index: 0;
     overflow: hidden;
     background: #d66b4b;
     border-bottom: 1px solid rgba(23, 33, 43, .16);

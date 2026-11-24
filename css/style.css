@@ -223,6 +223,7 @@ body {
     background: var(--primary);
     border-color: var(--primary);
     transform: translateY(-1px);
+    color: var(--academy-midnight);
 }
 
 .page-header {
@@ -643,7 +644,7 @@ body:not(.brochure-page) .btn.btn-light:hover {
 }
 
 body:not(.brochure-page) .btn-secondary {
-    color: var(--academy-text) !important;
+    color: #FFFFFF !important;
     background: var(--academy-teal) !important;
     border-color: var(--academy-teal) !important;
 }
@@ -733,7 +734,7 @@ body:not(.brochure-page) .testimonial-carousel .owl-item.center .testimonial-tex
 }
 
 body:not(.brochure-page) .testimonial-carousel .owl-item.center .testimonial-text * {
-    color: var(--academy-text) !important;
+    color: #FFFFFF !important;
 }
 
 body:not(.brochure-page) .testimonial-carousel .owl-dot {
@@ -820,6 +821,14 @@ body:not(.brochure-page) .back-to-top {
     right: clamp(16px, 3vw, 36px);
     bottom: clamp(16px, 3vw, 36px);
     z-index: 99;
+}
+
+body:not(.brochure-page) .container-xxl .d-flex > .ms-3 {
+    min-width: 0;
+}
+
+body:not(.brochure-page) .container-xxl .d-flex > .ms-3 p {
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 991.98px) {
